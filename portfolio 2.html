@@ -30,35 +30,34 @@
       color: var(--dark-color);
       line-height: 1.6;
     }
-    /* Hero Section with Animated Gradient */
+    /* Hero Section */
     .hero {
-      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-      background-size: 600% 600%;
-      animation: gradientAnimation 16s ease infinite;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 60px 20px 30px; /* Reduced padding */
+      padding: 100px 20px 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: -10%;
+      width: 120%;
+      height: 100px;
+      background: var(--light-color);
+      transform: rotate(-3deg);
     }
     .hero h1 {
-      font-size: 2.8rem; /* Reduced font-size */
-      margin-bottom: 10px;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
       animation: slideIn 1s ease-out;
-      position: relative;
-      z-index: 1;
     }
     .hero h2 {
-      font-size: 1.2rem; /* Reduced font-size */
+      font-size: 1.8rem;
       font-weight: 300;
       animation: slideIn 1s ease-out 0.2s backwards;
-      position: relative;
-      z-index: 1;
     }
     /* Navigation */
     .nav-toggle {
@@ -120,7 +119,7 @@
       background: white;
       border-radius: 15px;
       padding: 30px;
-      margin-bottom: 20px; /* Reduced margin-bottom */
+      margin-bottom: 40px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.08);
       opacity: 0;
       transform: translateY(20px);
@@ -139,6 +138,7 @@
       transition: all 0.3s ease, color 0.3s ease;
       position: relative;
     }
+    /* Animate heading color on hover */
     .section h2:hover {
       color: var(--secondary-color);
       padding-left: 25px;
@@ -219,20 +219,19 @@
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px; /* Reduced gap */
+      gap: 25px;
     }
-    /* Skill Card Styles - Reduced size and added shadow */
+    /* Skill Card Styles */
     .skill-card {
       background: var(--light-color);
-      padding: 15px; /* Reduced padding */
+      padding: 25px;
       border-radius: 10px;
       text-align: center;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .skill-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     .skill-card i {
       font-size: 2.5rem;
@@ -434,7 +433,7 @@
       <li><a href="#references">References</a></li>
     </ul>
   </nav>
-  <!-- Hero Section with Animated Gradient -->
+  <!-- Hero Section -->
   <header class="hero">
     <h1>Pharaoh Kipkirui Chirchir</h1>
     <h2>Data Analyst | BI Specialist | ML Expert</h2>
