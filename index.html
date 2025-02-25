@@ -1,91 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chirchir P. - Data Analyst</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gill+Sans+Nova:wght@400;700&family=Roboto:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Gill Sans Nova', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header h1, header h2 {
-            font-family: 'Roboto', sans-serif;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        .print-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .print-button:hover {
-            background-color: #0056b3;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .job {
-            margin-bottom: 15px;
-        }
-        .section-separator {
-            border: 0;
-            height: 1px;
-            background: #ccc;
-            margin: 40px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharaoh Kipkirui Chirchir - Data Analyst Specialist</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova:wght@400;700&family=Roboto:wght@400;700&display=swap">
+  <style>
+    /* Base styling */
+    body {
+      font-family: 'Gill Sans Nova', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #e9ecef;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #007bff;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 1px;
+    }
+    header h2 {
+      font-family: 'Roboto', sans-serif;
+      margin: 10px 0 0;
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .section h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .job, .education {
+      margin-bottom: 25px;
+    }
+    .job h3, .education h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #007bff;
+    }
+    .job-dates, .edu-dates {
+      font-style: italic;
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .print-button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .print-button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      margin-top: 20px;
+    }
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      header h2 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Chirchir P.</h1>
-            <h2>Data Analyst</h2>
+  <header>
+    <h1>Pharaoh Kipkirui Chirchir</h1>
+    <h2>Data Analyst Specialist</h2>
+  </header>
+  <main>
+    <div class="container">
+      <!-- Profile Section -->
+      <section class="section">
+        <h2>Profile</h2>
+        <p>
+          I am a strategic Data Analyst with over seven years of experience managing complex datasets to derive actionable insights. Proficient in SQL, Python, R, and the ESRI ArcGIS Suite, as well as Power BI and Tableau for data visualization, I excel at developing scalable reporting solutions. I am passionate about transforming data into strategic decisions that drive operational efficiency and foster innovation.
+        </p>
+      </section>
+      
+      <!-- Experience Section -->
+      <section class="section">
+        <h2>Experience</h2>
+        <div class="job">
+          <h3>Data Analyst Specialist | International Organization for Migration</h3>
+          <div class="job-dates">September 2022 - Present</div>
+          <ul>
+            <li>Engineered automated reporting processes with Power BI models and SQL scripts, reducing manual reporting by 80% and enhancing real-time analytics.</li>
+            <li>Developed a timeline trend report to optimize operations by tracking case progress and identifying process gaps, reducing processing time from 50 days in 2023 to 29 days in 2024.</li>
+            <li>Collaborated with cross-functional teams to implement an ETL pipeline and automate data cleaning for seamless report generation.</li>
+            <li>Spearheaded the Refugee Geospatial Database project in partnership with the Government of Kenya, enabling real-time tracking via ArcGIS dashboards.</li>
+            <li>Designed a dynamic timeline dashboard for exit permit processing that reduced airline block booking delays by 95%.</li>
+          </ul>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <div class="section">
-                <h2>Job Experience</h2>
-                <div class="job">
-                    <h3>Operations Data Assistant - IOM</h3>
-                    <p>• Led operations data analytics, providing reports to management and stakeholders.</p>
-                    <p>• Developed dashboards to visualise trends in refugee processing and resettlement.</p>
-                    <p>• Automated data extraction and cleaning processes using SQL and Python.</p>
-                </div>
-                <div class="job">
-                    <h3>Previous Company - Data Analyst</h3>
-                    <p>• Conducted exploratory data analysis (EDA) to identify key insights for business decisions.</p>
-                    <p>• Designed and optimised databases for storing unstructured data.</p>
-                    <p>• Worked on machine learning models for predictive analytics.</p>
-                </div>
-            </div>
-            <hr class="section-separator">
-            <div class="section">
-                <h2>Key Expertise</h2>
-                <!-- Add your key expertise content here -->
-            </div>
+
+        <div class="job">
+          <h3>Senior Operations Analyst | CWS RSC Africa</h3>
+          <div class="job-dates">August 2021 – August 2022</div>
+          <ul>
+            <li>Developed a predictive machine learning model to forecast refugee movement timelines, improving planning accuracy by 85% and reducing resource shortages by 40%.</li>
+            <li>Created real-time Tableau dashboards to manage case processing workload and quality assurance, boosting operational efficiency by 35%.</li>
+            <li>Implemented data governance protocols to ensure compliance with UNHCR and IOM standards.</li>
+            <li>Led a team of seven analysts to deploy over 40 SQL Server and Tableau reports during the START system rollout, streamlining real-time reporting for 15 departments.</li>
+          </ul>
         </div>
-    </main>
-    <footer>
-        <div class="container">
-            <button class="print-button" onclick="window.print()">Print</button>
+
+        <div class="job">
+          <h3>Case Processing Analyst II | CWS RSC Africa</h3>
+          <div class="job-dates">April 2020 – July 2021</div>
+          <ul>
+            <li>Developed Python scripts to clean, transform, and standardize raw refugee case data, facilitating seamless integration into Tableau dashboards.</li>
+            <li>Collaborated with cross-functional teams to deliver customized statistical analysis tools for enhanced reporting.</li>
+            <li>Automated error tracking and quality control processes, increasing reporting accuracy by 30%.</li>
+          </ul>
         </div>
-    </footer>
+
+        <div class="job">
+          <h3>Case Processing Analyst | CWS RSC Africa</h3>
+          <div class="job-dates">May 2018 – March 2020</div>
+          <ul>
+            <li>Processed and analyzed detailed refugee case data to support strategic planning and decision-making.</li>
+            <li>Developed visualizations highlighting drop-off trends at each stage of case processing for government reporting.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Claims Analyst | Resolution Insurance</h3>
+          <div class="job-dates">January 2017 – April 2018</div>
+          <ul>
+            <li>Designed a fraud detection model for medical claims achieving 94% accuracy, reducing risk and aiding in dispute resolution.</li>
+            <li>Conducted financial reconciliations to streamline account operations and enhance transparency.</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Education Section -->
+      <section class="section">
+        <h2>Education</h2>
+        <div class="education">
+          <h3>Nexford University, Master of Science in Data Analytics</h3>
+          <div class="edu-dates">November 2023 – November 2024</div>
+          <p><strong>Major:</strong> Data Science | <strong>Minor:</strong> Machine Learning</p>
+        </div>
+        <div class="education">
+          <h3>Chuka University, Bachelor of Economics and Statistics</h3>
+          <div class="edu-dates">September 2012 – May 2016</div>
+          <p><strong>Major:</strong> Economics | <strong>Minor:</strong> Statistics</p>
+        </div>
+      </section>
+      
+      <!-- Skills Section -->
+      <section class="section">
+        <h2>Skills and Abilities</h2>
+        <ul>
+          <li><strong>Languages and Tools:</strong> SQL, Python, R, Excel, Power BI, Tableau, Azure, Microsoft Dynamics ERP, ESRI ArcGIS Online, Enterprise, Experience Builder, Map Viewer, ASP.Net (Basic), ArcGIS Dashboards</li>
+          <li><strong>Spatial Analysis:</strong> Data modeling, predictive analytics, automated workflows, geospatial data integration, machine learning</li>
+          <li><strong>ETL & Data Warehousing:</strong> Data pipeline automation, SQL scripting, Azure integration</li>
+          <li><strong>Project Management:</strong> Agile methodologies, workflow optimization, stakeholder reporting, Survey123</li>
+          <li><strong>Soft Skills:</strong> Storytelling, effective communication, problem-solving, attention to detail, data interpretation</li>
+          <li><strong>Agile and Tools:</strong> Scrum, Kanban, Azure DevOps</li>
+        </ul>
+      </section>
+      
+      <!-- Awards Section -->
+      <section class="section">
+        <h2>Awards</h2>
+        <p>
+          Awarded the Most Innovative Staff at CWS RSC Africa for designing and deploying six automated workflows during the START system launch, enhancing operational efficiency and reducing case processing time by 40%, contributing to the departure of over 22,000 refugees.
+        </p>
+      </section>
+      
+      <!-- References Section -->
+      <section class="section">
+        <h2>References</h2>
+        <p><a href="#" id="requestReference">Click here to request references</a></p>
+      </section>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <button class="print-button" onclick="window.print()">Print / Download as PDF</button>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Modal for Reference Request -->
+  <div id="referenceModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Request References</h2>
+      <form id="referenceForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="reason">Reason for Request:</label><br>
+        <textarea id="reason" name="reason" rows="4" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Pharaoh Kipkirui Chirchir. All rights reserved.</p>
+  </footer>
+  
+  <script>
+    // Modal functionality
+    var modal = document.getElementById('referenceModal');
+    var btn = document.getElementById('requestReference');
+    var span = document.getElementsByClassName('close')[0];
+  
+    btn.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = 'block';
+    }
+  
+    span.onclick = function() {
+      modal.style.display = 'none';
+    }
+  
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  
+    // Form submission simulation
+    document.getElementById('referenceForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your reference request has been submitted.');
+      modal.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
