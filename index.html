@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pharaoh Kipkirui Chirchir - Data Analyst Specialist</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gill+Sans+Nova:wght@400;700&family=Roboto:wght@400;700&display=swap">
   <style>
@@ -16,9 +16,9 @@
       line-height: 1.6;
     }
     header {
-      background: #f8f9fa; /* Changed to a light grey color */
-      color: #333; /* Changed text color to dark grey */
-      padding: 40px 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
       text-align: center;
     }
     header h1 {
@@ -26,12 +26,14 @@
       margin: 0;
       font-size: 2.5em;
       letter-spacing: 1px;
+      color: #333;
     }
     header h2 {
       font-family: 'Roboto', sans-serif;
       margin: 10px 0 0;
       font-size: 1.5em;
       font-weight: 400;
+      color: #666;
     }
     .container {
       max-width: 900px;
@@ -88,8 +90,9 @@
       padding: 20px;
       background: #fff;
       margin-top: 20px;
+      border-top: 1px solid #ddd;
     }
-    /* Modal styling */
+    /* Improved Modal styling */
     .modal {
       display: none;
       position: fixed;
@@ -104,14 +107,21 @@
     .modal-content {
       background: #fff;
       margin: 10% auto;
-      padding: 20px;
-      border-radius: 8px;
+      padding: 30px;
+      border-radius: 10px;
       width: 90%;
       max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       position: relative;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
     .modal-content h2 {
       margin-top: 0;
+      font-family: 'Roboto', sans-serif;
     }
     .close {
       color: #aaa;
@@ -121,16 +131,32 @@
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
+      transition: color 0.3s ease;
     }
     .close:hover {
       color: #000;
     }
-    input[type="text"], input[type="email"], textarea {
+    .modal-content label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
       width: 100%;
-      padding: 10px;
-      margin: 5px 0 15px;
+      padding: 12px;
+      margin-top: 8px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
     }
     button[type="submit"] {
       background-color: #007bff;
@@ -139,9 +165,45 @@
       border: none;
       cursor: pointer;
       border-radius: 4px;
+      margin-top: 20px;
+      font-size: 1em;
+      transition: background 0.3s ease;
     }
     button[type="submit"]:hover {
       background-color: #0056b3;
+    }
+    /* Updated Skills section styling */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .skill-category {
+      flex: 1 1 300px;
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .skill-category h3 {
+      margin-top: 0;
+      color: #007bff;
+      font-size: 1.1em;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .skill-category ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+    .skill-category ul li {
+      padding: 4px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95em;
+    }
+    .skill-category ul li:last-child {
+      border-bottom: none;
     }
     /* Responsive design adjustments */
     @media (max-width: 768px) {
@@ -155,6 +217,9 @@
       }
       header h2 {
         font-size: 1.2em;
+      }
+      .skills-list {
+        flex-direction: column;
       }
     }
   </style>
@@ -250,14 +315,40 @@
       <!-- Skills Section -->
       <section class="section">
         <h2>Skills and Abilities</h2>
-        <ul>
-          <li><strong>Languages and Tools:</strong> SQL, Python, R, Excel, Power BI, Tableau, Azure, Microsoft Dynamics ERP, ESRI ArcGIS Online, Enterprise, Experience Builder, Map Viewer, ASP.Net (Basic), ArcGIS Dashboards</li>
-          <li><strong>Spatial Analysis:</strong> Data modeling, predictive analytics, automated workflows, geospatial data integration, machine learning</li>
-          <li><strong>ETL & Data Warehousing:</strong> Data pipeline automation, SQL scripting, Azure integration</li>
-          <li><strong>Project Management:</strong> Agile methodologies, workflow optimization, stakeholder reporting, Survey123</li>
-          <li><strong>Soft Skills:</strong> Storytelling, effective communication, problem-solving, attention to detail, data interpretation</li>
-          <li><strong>Agile and Tools:</strong> Scrum, Kanban, Azure DevOps</li>
-        </ul>
+        <div class="skills-list">
+          <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <ul>
+              <li>SQL, Python, R, Excel</li>
+              <li>Power BI, Tableau</li>
+              <li>ESRI ArcGIS Suite, ArcGIS Dashboards</li>
+              <li>Microsoft Dynamics ERP, Azure</li>
+              <li>Data Wrangling & Cleaning</li>
+              <li>ETL & Data Warehousing</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Analytical & Visualization</h3>
+            <ul>
+              <li>Statistical Analysis & Predictive Modeling</li>
+              <li>Data Mining & Business Intelligence</li>
+              <li>Geospatial Analysis & Mapping</li>
+              <li>Dashboard Design & Data Visualization</li>
+              <li>Data Interpretation & Storytelling</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Project & Soft Skills</h3>
+            <ul>
+              <li>Agile Methodologies (Scrum, Kanban)</li>
+              <li>Project Management & Workflow Optimization</li>
+              <li>Data Governance & Quality Assurance</li>
+              <li>Effective Communication & Stakeholder Engagement</li>
+              <li>Problem Solving & Attention to Detail</li>
+              <li>Leadership & Team Collaboration</li>
+            </ul>
+          </div>
+        </div>
       </section>
       
       <!-- Awards Section -->
@@ -280,19 +371,22 @@
     </div>
   </main>
   
-  <!-- Modal for Reference Request -->
+  <!-- Improved Modal for Reference Request -->
   <div id="referenceModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Request References</h2>
       <form id="referenceForm">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="reason">Reason for Request:</label><br>
-        <textarea id="reason" name="reason" rows="4" required></textarea><br>
-        <button type="submit">Submit</button>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+        
+        <label for="reason">Reason for Request</label>
+        <textarea id="reason" name="reason" rows="4" placeholder="Explain why you need references" required></textarea>
+        
+        <button type="submit">Submit Request</button>
       </form>
     </div>
   </div>
